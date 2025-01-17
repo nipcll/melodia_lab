@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Cursos;
+use App\Models\Modulo;
 use Illuminate\Http\Request;
 
 class CursosController extends Controller
@@ -69,4 +70,13 @@ class CursosController extends Controller
 
         return redirect()->route('perfil.index'); 
     }
+
+    public function destroy($id)
+    {
+        $curso = Cursos::findOrFail($id);
+        $curso->delete();
+
+        return redirect()->route('perfil.index')->with('success', 'Curso apagado com sucesso!');
+    }
+
 }

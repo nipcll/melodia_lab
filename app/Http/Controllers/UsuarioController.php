@@ -12,13 +12,13 @@ class UsuarioController extends Controller
     // Método para exibir o formulário de login
     public function showLoginForm()
     {
-        return view('login.login'); // Altere para o caminho correto da sua view de login
+        return view('login.login');
     }
 
     // Método para exibir o formulário de registro
     public function showRegisterForm()
     {
-        return view('login.register'); // Altere para o caminho correto da sua view de registro
+        return view('login.register'); 
     }
 
     // Método para registrar um novo usuário

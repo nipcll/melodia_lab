@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('modulo_id');
             $table->foreign('modulo_id')->references('id')->on('modulo');
+            $table->longText('titulo');
             $table->longText('descricao');
             $table->longText('conteudo');
             $table->longText('pdf');

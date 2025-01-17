@@ -13,6 +13,12 @@
                     <p class="card-text">{{ $modulo->descricao }}</p>
                     <a href="{{ route('aulas.index', $modulo->id) }}" class="btn btn-info">Ver Aulas</a>
                     <a href="{{ route('modulos.edit', $modulo->id) }}" class="btn btn-secondary">Editar Módulo</a>
+
+                    <form action="{{ route('modulos.destroy', $modulo->id) }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja apagar este curso?')">Apagar Módulo</button>
+                    </form>
                 </div>
             </div>
         @endforeach

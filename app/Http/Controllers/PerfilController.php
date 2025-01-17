@@ -11,7 +11,7 @@ class PerfilController extends Controller
     public function index()
     {
         $usuario = Auth::user();
-        $cursos = Cursos::where('id', $usuario->id)->get();
+        $cursos = Cursos::all(); 
 
         return view('perfil.index', compact('usuario', 'cursos')); 
     }

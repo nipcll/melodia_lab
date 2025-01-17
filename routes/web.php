@@ -36,6 +36,8 @@ Route::prefix('cursos')->group(function () {
     Route::post('/', [CursosController::class, 'store'])->name('cursos.store');
     Route::get('/{id}/edit', [CursosController::class, 'edit'])->name('cursos.edit');
     Route::put('/{id}', [CursosController::class, 'update'])->name('cursos.update');
+    Route::delete('/{id}', [CursosController::class, 'destroy'])->name('cursos.destroy');
+
 });
 
 
@@ -46,6 +48,7 @@ Route::prefix('modulos')->group(function () {
     Route::post('/{cursoId}', [ModuloController::class, 'store'])->name('modulos.store');
     Route::get('/{id}/edit', [ModuloController::class, 'edit'])->name('modulos.edit');
     Route::put('/{id}', [ModuloController::class, 'update'])->name('modulos.update');
+    Route::delete('/{id}', [ModuloController::class, 'destroy'])->name('modulos.destroy');
 });
 
 // Aulas
